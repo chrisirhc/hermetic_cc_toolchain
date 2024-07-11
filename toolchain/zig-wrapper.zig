@@ -64,7 +64,7 @@ const EXE = switch (builtin.target.os.tag) {
     else => "",
 };
 
-const CACHE_DIR = "{HERMETIC_CC_TOOLCHAIN_CACHE_PREFIX}";
+const CACHE_DIR = "$(pwd)/{HERMETIC_CC_TOOLCHAIN_CACHE_PREFIX}";
 
 const usage =
     \\

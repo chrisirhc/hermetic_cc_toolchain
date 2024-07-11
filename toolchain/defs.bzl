@@ -151,8 +151,7 @@ def _zig_repository_impl(repository_ctx):
 
     cache_prefix = repository_ctx.os.environ.get("HERMETIC_CC_TOOLCHAIN_CACHE_PREFIX", "")
     if cache_prefix == "":
-        label = Label("@zig_sdk_cache//:zig.env")
-        cache_prefix = str(repository_ctx.path(label).dirname)
+        cache_prefix = "external/zig_sdk_cache"
 
     repository_ctx.template(
         "tools/zig-wrapper.zig",
